@@ -22,3 +22,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Common\Factory\ConsoleOutputFactory: ~
+
+    Symfony\Component\Console\Output\ConsoleOutput:
+        factory: ['@App\Common\Factory\ConsoleOutputFactory', 'create']
